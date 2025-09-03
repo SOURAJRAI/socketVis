@@ -1,0 +1,80 @@
+.container{
+    display: flex;   
+    /* align-items: center; */
+    /* justify-content: center; */
+    
+    flex-direction: column;
+   
+    border: none;
+    gap: 10px;
+     padding: 10px 100px;
+}  
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+
+}
+.header h1{
+     background:linear-gradient(135deg, #00c6ff 0%, #4196fe 50%, #5b6af2 100%);
+     -webkit-background-clip: text;  
+     background-clip: text;
+     -webkit-text-fill-color: transparent; 
+     font-weight: bold;
+    }
+.header p{
+    margin: 0;
+    color:white;
+    padding: 5px 15px;
+    
+}
+span{
+
+    /* background: linear-gradient(135deg, #a3d8f3 0%, #3b80c5 50%, #2580e8 100%); */
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 50%, #5b6af2 100%);
+    border-radius: 5px;
+    margin: 1px;
+}
+
+/* .chart-container{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+
+
+    padding: 20px 20px;
+
+    
+} */
+.button{
+    display: flex;
+    justify-content: center;
+
+}
+
+.card{
+    /* display: flex; */
+
+    /* justify-content: start; */
+  
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(147, 147, 147, 0.22);
+   
+    /* border: 1px solid #e8e8e8; */
+    border-radius: 5px;
+}
+/* 
+.disconnect{
+
+    width: 20%;
+    border:none;
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 50%, #5b6af2 100%);
+    padding: 10px 10px;
+    color:white;
+    border-radius: 10px;
+    
+} */
