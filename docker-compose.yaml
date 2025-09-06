@@ -1,0 +1,43 @@
+
+
+services:
+  rabbitmq: 
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+    - "5672:5672"
+    - "15672:15672"
+    # healthcheck:
+    #   test: ["CMD", "rabbitmq-diagnostics","ping"]
+    #   interval: 10s
+    #   timeout: 5s
+    #   retries: 5
+  
+  producer:
+    build: ./backend_pro
+    container_name: producer
+    environment:
+    - RABBITMQ_URL=amqp://rabbitmq  
+    ports:
+    - "3000:3000"
+    depends_on:
+    - rabbitmq
+    
+  consumer:
+    build: ./backend_soc
+    container_name: consumer
+    environment:
+    - RABBITMQ_URL=amqp://rabbitmq
+    ports:
+    - "4000:4000"
+    depends_on:
+    - rabbitmq
+    - producer
+
+  frontend:
+    build: ./frontend_vis
+    container_name: frontend
+    ports:
+    - "5173:5173"
+    depends_on:
+    - consumer

@@ -1,4 +1,4 @@
-const ampq = require("amqplib");
+const amqp = require("amqplib");
 const express = require("express");
 
 const app = express();
@@ -45,8 +45,7 @@ dotenv.config();
 
 async function generateRandom() {
   try{
-
-    let connection=await ampq.connect(process.env.RABBITMQ_URL || "amqp://localhost");
+    let connection=await  amqp.connect(process.env.RABBITMQ_URL);
     let channel= await connection.createChannel();
 
     await channel.assertQueue(Queue,{durable:false});
@@ -58,7 +57,7 @@ async function generateRandom() {
     }, 100);
   }catch(err){
     console.log(err);
-    setTimeout(()=>generateRandom,5000)
+    setTimeout(generateRandom,5000)
   }
 
 }

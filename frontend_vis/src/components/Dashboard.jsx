@@ -41,7 +41,7 @@ function Dashboard() {
     },[]);
 
     const chartOption={
-        chart:{type:"areaspline"},
+        chart:{type:"line"},
         credits:{enabled:false},
         title:{
             text:"Squares Of Number",
